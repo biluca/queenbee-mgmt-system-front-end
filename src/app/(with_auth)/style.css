@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    border: 0px dotted #cc0000;
+}
+
+.WithAuthLayout {
+    display: flex;
+    height: 100vh; /* h-screen */
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+.WithAuthLayout {
+    flex-direction: row; /* md:flex-row */
+    overflow: hidden; /* md:overflow-hidden */
+}
+}
+
+.SideNavContainer {
+    width: 100%; /* w-full */
+    flex: none; /* flex-none */
+}
+
+@media (min-width: 768px) {
+    .SideNavContainer {
+        width: 16rem; /* md:w-64 */
+    }
+}
+
+.MainContent {
+    flex-grow: 1;
+    padding: 1.5rem; /* p-6 */
+  }
+  
+  @media (min-width: 768px) {
+    .MainContent {
+      overflow-y: auto; /* md:overflow-y-auto */
+      padding: 3rem; /* md:p-12 */
+    }
+  }
+  
+  

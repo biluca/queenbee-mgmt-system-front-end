@@ -1,0 +1,88 @@
+.RootLayout {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #FEFFDB;
+}
+
+
+/* Container to ensure 100% height layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header styling */
+.header {
+  background-color: #F4CE14;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header .logo img {
+  height: 80%;
+}
+
+.nav-links a {
+  color: #444444;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content styling */
+.content {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.welcome-text h1 {
+  color: #444444;
+  font-size: 3rem;
+}
+
+.personal-picture img {
+  height: 70%;
+  max-height: 80vh;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #F4CE14;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.footer .social-links img {
+  height: 100%;
+  margin: 0 10px;
+}
