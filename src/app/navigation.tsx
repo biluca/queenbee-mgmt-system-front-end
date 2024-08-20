@@ -1,55 +1,79 @@
-import NavLink from "@/components/NavLink/NavLink";
-import { NavLinkProps } from "@/components/NavLink/NavLinkProps";
+import { SideNavGroupProps } from "@/components/SideNav/SideNavGroup/SideNavGrouProps";
+import { SideNavItemProps } from "@/components/SideNav/SideNavItem/SideNavtItemProps";
 
-import { BsPeopleFill, BsBoxSeamFill } from "react-icons/bs";
-import { FaMoneyCheckAlt } from "react-icons/fa";
-import { IoSettings } from "react-icons/io5";
+import { IoHomeOutline, IoPeopleOutline, IoWalletOutline, IoCubeOutline, IoSettingsOutline, IoCalendarOutline, IoAlarmOutline, IoCaretForwardOutline } from "react-icons/io5";
 
-const navigationList: Array<NavLinkProps> = [
+const settingsItemList: Array<SideNavItemProps> = [
     {
-        name: "Customers",
-        href: "/crm",
-        icon: BsPeopleFill
+        name: "Usuários",
+        href: "/users",
+        icon: IoCaretForwardOutline
     },
     {
-        name: "Finances",
-        href: "/financeiro",
-        icon: FaMoneyCheckAlt
+        name: "Perfurações",
+        href: "/services",
+        icon: IoCaretForwardOutline
     },
     {
-        name: "Stock",
-        href: "/estoque",
-        icon: BsBoxSeamFill
+        name: "Pagamentos",
+        href: "/payments",
+        icon: IoCaretForwardOutline
     },
     {
-        name: "Settings",
-        href: "/configuracoes",
-        icon: IoSettings
-    },
+        name: "Categorias",
+        href: "/categories",
+        icon: IoCaretForwardOutline
+    }
 
 ]
 
-export default function Navigation() {
-    //const pathname = usePathname();
 
-    return (
-        <>
-            {navigationList.map((navigationLink) => {
-                const LinkIcon = navigationLink.icon;
-                return (
-                    <NavLink
-                        key={navigationLink.name}
-                        name={navigationLink.name}
-                        href={navigationLink.href}
-                        icon={navigationLink.icon}
-                    />
-                );
-            })}
-        </>
-    );
-}
-
-
+export const navigationGroupList: Array<SideNavGroupProps> = [
+    {
+        name: "Home",
+        href: "/dashboard",
+        icon: IoHomeOutline,
+        nav_items: []
+    },
+    {
+        name: "Agenda",
+        href: "/schedule",
+        icon: IoCalendarOutline,
+        nav_items: []
+    },
+    {
+        name: "Atendimentos",
+        href: "/appointments",
+        icon: IoAlarmOutline,
+        nav_items: []
+    },
+    {
+        name: "Clientes",
+        href: "/customers",
+        icon: IoPeopleOutline,
+        nav_items: []
+    },
+    {
+        name: "Financeiro",
+        href: "/finance",
+        icon: IoWalletOutline,
+        nav_items: []
+    }
+    ,
+    {
+        name: "Estoque",
+        href: "/stock",
+        icon: IoCubeOutline,
+        nav_items: []
+    }
+    ,
+    {
+        name: "Configurações",
+        href: "/settings",
+        icon: IoSettingsOutline,
+        nav_items: settingsItemList
+    }
+]
 
 
 

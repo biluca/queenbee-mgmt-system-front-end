@@ -1,5 +1,4 @@
-import './style.css'
-
+import './style.scss'
 
 export const metadata = {
   title: 'Bee.M - Public'

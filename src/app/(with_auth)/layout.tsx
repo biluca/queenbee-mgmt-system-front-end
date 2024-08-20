@@ -1,13 +1,11 @@
-import "./style.css"
+import "./style.scss"
 import SideNav from "@/components/SideNav/SideNav";
 
- 
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="WithAuthLayout">
-      <div className="SideNavContainer">
-        <SideNav />
-      </div>
+      <SideNav />
       <div className="MainContent">{children}</div>
     </div>
   );

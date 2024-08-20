@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../design.scss';
+
 body {
   background-image: url('/background-tile.png');
-  background-color: #FEFFDB;
+  background-color: $tertiary-color;
 }
+
+*{
+  border: 0px dotted #cc0000;
+}
+

@@ -1,4 +1,3 @@
-import "./style.css"
 
 export const metadata = {
   title: 'QueenBee'

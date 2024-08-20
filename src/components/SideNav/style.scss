@@ -1,0 +1,101 @@
+@import "../../app/design.scss";
+
+.SideNavContainer {
+  width: 200px;
+  flex-shrink: 0;
+  height: 100vh;
+  background-color: $tertiary-color;
+}
+
+.NavBar {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem; /* space-x-2 */
+  flex-direction: column; /* md:flex-col */
+  gap: 0; /* md:space-x-0 */
+  gap: 0.5rem; /* md:space-y-2 */
+  background-color: $tertiary-color;
+  padding-top: 0.5rem;
+  padding-bottom: 3rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.NavBarFooter {
+  width: 100%; 
+  border-radius: 0.375rem; 
+  background-color: #f00;
+}
+
+.NavBarHeader {
+  flex-grow: 1;
+  height: 6rem;
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-end;
+  background-color: #444444;
+  padding: 0.8rem;
+}
+
+.SideNavGroup {
+  display: flex;
+  height: 2rem;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #feffdb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.6s ease;
+  color: #444444;
+  border-radius: 0.375rem;
+}
+
+.SideNavGroup:hover {
+  background-color: #444444;
+  color: #ffc60b;
+}
+
+@media (min-width: 768px) {
+  .SideNavGroup {
+    flex-grow: 0;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+.SideNavItem {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  height: 2rem;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #feffdb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.6s ease;
+  color: #444444;
+  border-radius: 0.375rem;
+  margin-left: 20px;
+}
+
+.SideNavItem:hover {
+  background-color: #444444;
+  color: #ffc60b;
+}
+
+@media (min-width: 768px) {
+  .SideNavItem {
+    flex-grow: 0;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
