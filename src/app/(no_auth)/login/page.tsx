@@ -1,62 +1,78 @@
+'use client'
+
 import "./style.scss"
 import BeeMLogo from "@/components/BeeMLogo/BeeMLogo";
-import { IoEnter } from "react-icons/io5";
-
+import Image from 'next/image'
 import { Button } from "@/components/Button/Button";
+import { FormState, login } from "@/app/(no_auth)/login/loginActions"
+import { IoPersonOutline, IoKeyOutline } from "react-icons/io5";
+import { useActionState } from 'react'
+import { useFormStatus, useFormState } from 'react-dom'
+
+const initialState: FormState = {
+    errors: {
+        user: "",
+        password: ""
+    }
+}
 
 export default function LoginPage() {
+    const [state, formAction] = useFormState(login, initialState)
+
+
     return (
         <main className="LoginContainer">
             <div className="LoginContent">
                 <div className="LoginHeader">
                     <BeeMLogo />
                 </div>
-                <form action={'/dashboard'}>
+                <form action={formAction}>
                     <div className="FormContent">
                         <div className="w-full">
                             <div>
-                                <label
-                                    htmlFor="email"
-                                >
-                                    User
+                                <label className="FormLabel" htmlFor="email">
+                                    Usuário
                                 </label>
                                 <div className="relative">
                                     <input
-                                        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        placeholder="Enter your email address"
                                         required
-                                    >
-
-                                    </input>
+                                        id="user"
+                                        type="text"
+                                        name="user"
+                                        placeholder="Digite o seu Usuário"
+                                        className="FormInput"
+                                    />
+                                    <IoPersonOutline className="FormInputIcon" />
                                 </div>
+                                {state?.errors?.user && <p>{state.errors.user}</p>}
                             </div>
-                            <div className="mt-4">
-                                <label
-                                    htmlFor="password"
-                                >
-                                    Password
+                            <div >
+                                <label className="FormLabel" htmlFor="password">
+                                    Senha
                                 </label>
                                 <div className="relative">
                                     <input
-                                        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                                        required
                                         id="password"
                                         type="password"
                                         name="password"
-                                        placeholder="Enter password"
-                                        required
-                                        minLength={6}
+                                        placeholder="Digite sua Senha"
+                                        className="FormInput"
                                     />
+                                    <IoKeyOutline className="FormInputIcon" />
                                 </div>
+                                {state?.errors?.password && <p>{state.errors.password}</p>}
                             </div>
                         </div>
                         <Button>
-                            Log in 
+                            Entrar
                         </Button>
                     </div>
                 </form>
+                <div className="LoginFooter">
+                    Em Parceria com
+                    <Image alt='Dog Image' src="/queen_bee.png" width={100} height={0} />
+                </div>
             </div>
         </main>
 
