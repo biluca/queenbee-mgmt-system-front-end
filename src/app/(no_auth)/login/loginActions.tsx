@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache';
+import { createSession } from '../../../session';
 
 export type FormState =
     | {
@@ -13,8 +14,8 @@ export type FormState =
     | undefined
 
 export async function login(state: FormState, formData: FormData) {
-    const user = formData.get('user')?.toString();
-    const password = formData.get('password')?.toString();
+    const user = (formData.get('user') || "").toString();
+    const password = (formData.get('password') || "").toString();
 
     const userError = validateUser(user);
     const passwordError = validatePassword(password);
@@ -30,8 +31,8 @@ export async function login(state: FormState, formData: FormData) {
     }
 
     //HERE I SHOULD VALIDATE THE USER DATA
-    
-    //HERE I SHOULD CREATE A SESSION
+
+    await createSession(user)
 
     const dashboardPath = "/dashboard"
     revalidatePath(dashboardPath)
@@ -43,12 +44,12 @@ function validateUser(user?: string) {
         return ""
     }
 
-    const regex = new RegExp('^(?=.{5,15}$)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]+\.(?=.{5,15}$)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]+$');
+    // const regex = new RegExp('^(?=.{5,15}$)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]+\.(?=.{5,15}$)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]+$');
 
-    if (!regex.test(user)) {
-        return "O Usuário não obedece as regras de formatação!"
+    // if (!regex.test(user)) {
+    //     return "O Usuário não obedece as regras de formatação!"
 
-    }
+    // }
 
     return "";
 }
