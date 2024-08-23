@@ -3,7 +3,6 @@ import Link from 'next/link';
 import BeeMLogo from "../BeeMLogo/BeeMLogo";
 
 import { navigationGroupList } from '@/app/navigation'
-import NavLink from "./NavLink/NavLink";
 import SideNavGroup from "./SideNavGroup/SideNavGroup";
 import SideNavItem from "./SideNavItem/SideNavItem";
 
@@ -28,6 +27,7 @@ export default function SideNav() {
                 name={navigationGroup.name}
                 href={navigationGroup.href}
                 icon={navigationGroup.icon}
+                active={navigationGroup.active}
               />
               {navigationItems.map((navigationItem) => {
                 return (
@@ -36,6 +36,7 @@ export default function SideNav() {
                     name={navigationItem.name}
                     href={navigationItem.href}
                     icon={navigationItem.icon}
+                    active={navigationItem.active}
                   />
                 );
               })}

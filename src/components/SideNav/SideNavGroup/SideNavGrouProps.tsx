@@ -5,4 +5,5 @@ export type SideNavGroupProps = {
     href: string
     icon: any
     nav_items?: Array<SideNavItemProps>
+    active: boolean
 }

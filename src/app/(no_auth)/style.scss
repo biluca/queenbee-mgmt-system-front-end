@@ -13,3 +13,8 @@ body {
   border: 0px dotted #cc0000;
 }
 
+.RootLayout {
+  font-family:$main-font, $default-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

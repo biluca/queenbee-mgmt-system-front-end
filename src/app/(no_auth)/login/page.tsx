@@ -6,8 +6,7 @@ import Image from 'next/image'
 import { Button } from "@/components/Button/Button";
 import { FormState, login } from "@/app/(no_auth)/login/loginActions"
 import { IoPersonOutline, IoKeyOutline } from "react-icons/io5";
-import { useActionState } from 'react'
-import { useFormStatus, useFormState } from 'react-dom'
+import { useFormState } from 'react-dom'
 
 const initialState: FormState = {
     errors: {
@@ -19,50 +18,47 @@ const initialState: FormState = {
 export default function LoginPage() {
     const [state, formAction] = useFormState(login, initialState)
 
-
     return (
         <main className="LoginContainer">
             <div className="LoginContent">
                 <div className="LoginHeader">
                     <BeeMLogo />
                 </div>
-                <form action={formAction}>
+                <form className="Form" action={formAction}>
                     <div className="FormContent">
-                        <div className="w-full">
-                            <div>
-                                <label className="FormLabel" htmlFor="email">
-                                    Usuário
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        required
-                                        id="user"
-                                        type="text"
-                                        name="user"
-                                        placeholder="Digite o seu Usuário"
-                                        className="FormInput"
-                                    />
-                                    <IoPersonOutline className="FormInputIcon" />
-                                </div>
-                                {state?.errors?.user && <p>{state.errors.user}</p>}
+                        <div>
+                            <label className="FormLabel" htmlFor="email">
+                                Usuário
+                            </label>
+                            <div className="relative">
+                                <input
+                                    required
+                                    id="user"
+                                    type="text"
+                                    name="user"
+                                    placeholder="Digite o seu Usuário"
+                                    className="FormInput"
+                                />
+                                <IoPersonOutline className="FormInputIcon" />
                             </div>
-                            <div >
-                                <label className="FormLabel" htmlFor="password">
-                                    Senha
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        required
-                                        id="password"
-                                        type="password"
-                                        name="password"
-                                        placeholder="Digite sua Senha"
-                                        className="FormInput"
-                                    />
-                                    <IoKeyOutline className="FormInputIcon" />
-                                </div>
-                                {state?.errors?.password && <p>{state.errors.password}</p>}
+                            {state?.errors?.user && <p>{state.errors.user}</p>}
+                        </div>
+                        <div >
+                            <label className="FormLabel" htmlFor="password">
+                                Senha
+                            </label>
+                            <div className="relative">
+                                <input
+                                    required
+                                    id="password"
+                                    type="password"
+                                    name="password"
+                                    placeholder="Digite sua Senha"
+                                    className="FormInput"
+                                />
+                                <IoKeyOutline className="FormInputIcon" />
                             </div>
+                            {state?.errors?.password && <p>{state.errors.password}</p>}
                         </div>
                         <Button>
                             Entrar

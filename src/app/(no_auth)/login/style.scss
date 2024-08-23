@@ -20,8 +20,9 @@
   max-width: 400px;
   flex-direction: column;
   gap: 0.625rem;
-  padding: 1rem;
+  padding: .8rem;
   margin-top: -8rem;
+ 
 }
 
 .LoginHeader {
@@ -43,6 +44,11 @@
   padding: 0.5rem;
 }
 
+.Form {
+  width: 100%;
+  max-width: 400px;
+}
+
 .FormContent {
   flex: 1;
   background-color: $primary-color;
@@ -57,7 +63,7 @@
 .FormLabel {
   font-size: 1.2rem;
   font-weight: 500;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 .FormInput {
@@ -78,12 +84,4 @@
 }
 
 .FormInputIcon {
-  pointer-events: none;
-  position: absolute;
-  left: 0.75rem; /* left-3 */
-  top: 50%; /* top-1/2 */
-  height: 18px; /* h-[18px] */
-  width: 18px; /* w-[18px] */
-  transform: translateY(-50%); /* -translate-y-1/2 */
-  color: #6b7280; /* text-gray-500 */
 }

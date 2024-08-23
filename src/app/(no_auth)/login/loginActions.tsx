@@ -33,7 +33,7 @@ export async function login(state: FormState, formData: FormData) {
     //HERE I SHOULD VALIDATE THE USER DATA
 
     await createSession(user)
-
+    
     const dashboardPath = "/dashboard"
     revalidatePath(dashboardPath)
     redirect(dashboardPath)
