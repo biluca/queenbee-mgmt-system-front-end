@@ -1,13 +1,8 @@
 import axios from "axios";
-import { toast } from 'react-hot-toast';
 import { cookies } from "next/headers";
 
-export async function getApiClient(user: string, password: string) {
+export async function getApiClient() {
   let token = await cookies().get("token")?.value.toString();
-
-  if (!token) {
-    token = await getToken(user, password);
-  }
 
   const api = axios.create({
     baseURL: process.env.API_BASE_URL,

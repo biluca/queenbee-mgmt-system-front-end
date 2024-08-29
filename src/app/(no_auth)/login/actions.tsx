@@ -13,7 +13,7 @@ export type FormState =
     }
 
 
-export async function login(state: FormState, formData: FormData) {
+export async function login(state: FormState, formData: FormData): Promise<FormState> {
     const user = (formData.get('user') || "").toString();
     const password = (formData.get('password') || "").toString();
 
