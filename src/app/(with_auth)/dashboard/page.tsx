@@ -12,8 +12,6 @@ export default function DashboardPage() {
 
             <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
                 <TodayBirthdays />
-                <TodayBirthdays />
-                <TodayBirthdays />
             </div>
         </main>
     );

@@ -63,6 +63,7 @@
 }
 
 .SideNavGroupInactive{
+  pointer-events: none; 
   display: flex;
   height: 2rem;
   flex-grow: 0;
@@ -107,6 +108,7 @@
   align-items: center;
   height: 2rem;
   justify-content: flex-start;
+  pointer-events: none; 
   gap: 0.5rem;
   background-color: #feffdb;
   font-size: 0.9rem;

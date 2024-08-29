@@ -10,7 +10,7 @@ export default function PageTitle(props: PageTitleProps) {
             <div className="PageTitleIcon">
                 <PageTitleIcon />
             </div>
-            <h1>{props.title}</h1>
+            <h3>{props.title}</h3>
         </div>
     );
 }

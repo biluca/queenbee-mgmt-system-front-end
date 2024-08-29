@@ -4,14 +4,15 @@ import "./style.scss"
 import BeeMLogo from "@/components/BeeMLogo/BeeMLogo";
 import Image from 'next/image'
 import { Button } from "@/components/Button/Button";
-import { FormState, login } from "@/app/(no_auth)/login/loginActions"
+import { FormState, login } from "@/app/(no_auth)/login/actions"
 import { IoPersonOutline, IoKeyOutline } from "react-icons/io5";
 import { useFormState } from 'react-dom'
 
 const initialState: FormState = {
     errors: {
         user: "",
-        password: ""
+        password: "",
+        authorization: "",
     }
 }
 
@@ -63,6 +64,7 @@ export default function LoginPage() {
                         <Button>
                             Entrar
                         </Button>
+                        {state?.errors?.authorization && <p>{state.errors.authorization}</p>}
                     </div>
                 </form>
                 <div className="LoginFooter">

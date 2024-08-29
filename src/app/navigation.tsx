@@ -3,7 +3,55 @@ import { SideNavItemProps } from "@/components/SideNav/SideNavItem/SideNavtItemP
 
 import { IoHomeOutline, IoPeopleOutline, IoWalletOutline, IoCubeOutline, IoSettingsOutline, IoCalendarOutline, IoAlarmOutline, IoCaretForwardOutline } from "react-icons/io5";
 
-const settingsItemList: Array<SideNavItemProps> = [
+const customersNavItemList: Array<SideNavItemProps> = [
+    {
+        name: "Novo Cliente",
+        href: "/customers/new",
+        icon: IoCaretForwardOutline,
+        active: true
+    },
+    {
+        name: "Leads",
+        href: "/customers/leads",
+        icon: IoCaretForwardOutline,
+        active: false
+    },
+
+]
+
+const appointmentsNavItemList: Array<SideNavItemProps> = [
+    {
+        name: "Novo Atendimento",
+        href: "/appointment/new",
+        icon: IoCaretForwardOutline,
+        active: true
+    },
+    {
+        name: "Pós-Atendimento",
+        href: "/appointment/after",
+        icon: IoCaretForwardOutline,
+        active: false
+    },
+
+]
+
+const financeNavItemList: Array<SideNavItemProps> = [
+    {
+        name: "Novo Pagamento",
+        href: "/appointment/new",
+        icon: IoCaretForwardOutline,
+        active: true
+    },
+    {
+        name: "Entradas e Saídas",
+        href: "/appointment/after",
+        icon: IoCaretForwardOutline,
+        active: false
+    },
+
+]
+
+const settingsNavItemList: Array<SideNavItemProps> = [
     {
         name: "Usuários",
         href: "/users",
@@ -41,34 +89,33 @@ export const navigationGroupList: Array<SideNavGroupProps> = [
         active: true
     },
     {
-        name: "Agenda",
-        href: "/schedule",
-        icon: IoCalendarOutline,
-        nav_items: [],
-        active: false
+        name: "Clientes",
+        href: "/customers",
+        icon: IoPeopleOutline,
+        nav_items: customersNavItemList,
+        active: true
     },
     {
         name: "Atendimentos",
         href: "/appointments",
         icon: IoAlarmOutline,
-        nav_items: [],
-        active: false
-    },
-    {
-        name: "Clientes",
-        href: "/customers",
-        icon: IoPeopleOutline,
-        nav_items: [],
+        nav_items: appointmentsNavItemList,
         active: true
     },
     {
         name: "Financeiro",
         href: "/finance",
         icon: IoWalletOutline,
+        nav_items: financeNavItemList,
+        active: true
+    },
+    {
+        name: "Agenda",
+        href: "/schedule",
+        icon: IoCalendarOutline,
         nav_items: [],
         active: false
-    }
-    ,
+    },
     {
         name: "Estoque",
         href: "/stock",
@@ -81,7 +128,7 @@ export const navigationGroupList: Array<SideNavGroupProps> = [
         name: "Configurações",
         href: "/settings",
         icon: IoSettingsOutline,
-        nav_items: settingsItemList,
+        nav_items: settingsNavItemList,
         active: false
     }
 ]

@@ -1,17 +1,17 @@
 "use server"
 
 import { redirect } from 'next/navigation'
-import { revalidatePath } from 'next/cache';
-import { createSession } from '../../../session';
+import { createSession } from './session';
 
 export type FormState =
-    | {
+    {
         errors?: {
             user?: string
             password?: string
+            authorization?: string
         }
     }
-    | undefined
+
 
 export async function login(state: FormState, formData: FormData) {
     const user = (formData.get('user') || "").toString();
@@ -30,12 +30,18 @@ export async function login(state: FormState, formData: FormData) {
         return { errors }
     }
 
-    //HERE I SHOULD VALIDATE THE USER DATA
+    const result = await createSession(user, password)
 
-    await createSession(user)
-    
+    if (result.includes("ERRO")) {
+        const errors = {
+            user: "",
+            password: "",
+            authorization: result,
+        }
+        return { errors }
+    }
+
     const dashboardPath = "/dashboard"
-    revalidatePath(dashboardPath)
     redirect(dashboardPath)
 }
 

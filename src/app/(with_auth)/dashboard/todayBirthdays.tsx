@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 import { fetchTodayBirthdays } from './dashboardActions';
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
@@ -32,12 +31,7 @@ export default async function TodayBirthdays() {
                         return (
                             <div
                                 key={todayBirthday.id}
-                                className={clsx(
-                                    'flex flex-row items-center justify-between py-4',
-                                    {
-                                        'border-t': i !== 0,
-                                    },
-                                )}
+                                className="CLASS_NAME_HERE"
                             >
                                 <div className="flex items-center">
 

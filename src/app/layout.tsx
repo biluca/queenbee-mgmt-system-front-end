@@ -1,6 +1,6 @@
 
 export const metadata = {
-  title: 'QueenBee'
+  title: 'Bee.M'
 }
 
 export default function RootLayout({
