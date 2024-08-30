@@ -4,7 +4,7 @@ import { jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { getToken } from "@/services/backend.api";
 
-const secretKey = process.env.SESSION_SECRET;
+const secretKey = "OOwWPR4ifxAHu+EhZ2iDOtxKoGKwa6tx0i11Ink+DcE=";
 const encodedKey = new TextEncoder().encode(secretKey);
 
 export async function decrypt(session: string | undefined = "") {
