@@ -5,7 +5,7 @@ export async function getApiClient() {
   let token = await cookies().get("token")?.value.toString();
 
   const api = axios.create({
-    baseURL: process.env.API_BASE_URL,
+    baseURL: "https://queenbee-mgmt-system-back-end.vercel.app",
     headers: {
       "api-key": process.env.API_KEY || "",
       authorization: `${token}`,
@@ -19,7 +19,7 @@ export async function getApiClient() {
 export async function getToken(username: string, password: string) {
   try {
     const response = await axios.post(
-      `${process.env.API_BASE_URL}/auth/login`,
+      `https://queenbee-mgmt-system-back-end.vercel.app/auth/login`,
       {
         username: username,
         password: password,
