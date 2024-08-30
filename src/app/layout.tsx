@@ -1,7 +1,7 @@
-import "./style.css"
+import { Toaster } from 'react-hot-toast'
 
 export const metadata = {
-  title: 'QueenBee'
+  title: 'Bee.M'
 }
 
 export default function RootLayout({
@@ -11,6 +11,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Toaster position="top-center"
+        reverseOrder={false} />
       <body className="RootLayout">{children}</body>
     </html>
   )

@@ -8,8 +8,6 @@ export default async function ConfiguracoesPage() {
         res.json()
     )
 
-    console.log("Data:", data);
-
     return (
         <>
             <h1>Configuracoes Page</h1>

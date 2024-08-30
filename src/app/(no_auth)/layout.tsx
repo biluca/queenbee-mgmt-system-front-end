@@ -1,5 +1,5 @@
-import './style.css'
-
+import { Toaster } from 'react-hot-toast'
+import './style.scss'
 
 export const metadata = {
   title: 'Bee.M - Public'
@@ -11,8 +11,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="RootLayout">{children}</body>
+    <html>
+      <body className="RootLayout">
+        <Toaster position="bottom-center" />
+        {children}
+      </body>
     </html>
   )
 }

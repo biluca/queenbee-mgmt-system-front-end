@@ -1,8 +1,15 @@
+@import 'design.scss';
+
 .RootLayout {
-    font-family: 'Poppins', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  font-family:$main-font, $default-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  height: 100%;
+  background-color: $primary-color;
+}
 
 /* Reset some basic styles */
 * {
@@ -10,12 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-
-body, html {
-  height: 100%;
-  background-color: #FEFFDB;
-}
+;}
 
 
 /* Container to ensure 100% height layout */
@@ -85,4 +87,17 @@ body, html {
 .footer .social-links img {
   height: 100%;
   margin: 0 10px;
+}
+
+.ErrorNotFound {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;    
+  background-image: url('/background-tile.png');
+  background-color: $tertiary-color;
+} 
+
+.ErrorNotFoundImage {
+  height: auto;
 }

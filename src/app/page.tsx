@@ -1,5 +1,5 @@
-import "./style.css"
 import Image from 'next/image'
+import "./style.scss"
 
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 

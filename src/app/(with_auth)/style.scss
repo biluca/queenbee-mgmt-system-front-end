@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../design.scss";
+
+* {
+  border: 0px dotted #cc0000;
+}
+
+.WithAuthLayout {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  background-color: $light-background;
+}
+
+.MainContent {
+  flex-grow: 1;
+  padding: 2rem;
+}

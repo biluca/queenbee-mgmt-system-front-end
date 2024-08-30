@@ -7,6 +7,11 @@ const nextConfig = {
             hostname: 'images.dog.ceo',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'randomuser.me',
+            port: '',
+          },
         ],
       },
 };

@@ -1,0 +1,21 @@
+@import "../../app/design.scss";
+
+* {
+  border: 0px dotted #cc0000;
+}
+
+.PageTitle {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border: 2px double $primary-color;
+  border-style: none none double none ;
+  padding-bottom: 1rem;
+}
+
+.PageTitleIcon {
+  display: flex;
+  align-items: center;
+}
